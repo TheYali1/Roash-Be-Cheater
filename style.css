@@ -1,0 +1,258 @@
+:root {
+    --purple-dark: #3E1E6E;
+    --purple-main: #5C37A5;
+    --purple-light: #7E57C2;
+    --text-color: #ECECEC;
+    --border-color: #9C7EE5;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #351a5c;
+    color: var(--text-color);
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: block;
+    height: 100vh;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.header-drag-area {
+    -webkit-app-region: drag;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1000;
+}
+
+.window-controls {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    z-index: 1001;
+    -webkit-app-region: no-drag;
+}
+
+.window-controls button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    font-size: 1.2em;
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 0 3px;
+    padding: 5px 8px;
+    opacity: 1;
+    transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+    border-radius: 4px;
+}
+
+#exitButton:hover {
+    color: #FF6B6B;
+    background-color: rgba(255, 107, 107, 0.3);
+    opacity: 1;
+}
+
+#minimizeButton:hover,
+#maximizeButton:hover {
+    color: var(--purple-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.container-title {
+    text-align: center;
+    -webkit-app-region: no-drag;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 0;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #CFC0E9;
+}
+
+.container {
+    width: 650px;
+    margin: 0;
+    background-color: var(--purple-dark);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    -webkit-app-region: no-drag;
+    animation: fadeIn 1s ease-out;
+    overflow: hidden;
+}
+
+h2 {
+    color: var(--border-color);
+    margin-top: 5px;
+    font-size: 1.3em;
+    border-bottom: 1px dashed var(--purple-main);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.search-area {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    padding: 14px;
+    border-radius: 8px;
+    border: 2px solid var(--purple-main);
+    background-color: #4A2A7D;
+    color: var(--text-color);
+    font-size: 1.1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-align: right;
+}
+
+#searchInput::placeholder {
+    color: #B0A0D0;
+}
+
+#searchInput:focus {
+    border-color: var(--border-color);
+    box-shadow: 0 0 8px rgba(156, 126, 229, 0.4);
+    outline: none;
+}
+
+.content-container {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out, max-height 0.4s ease-out;
+}
+
+.content-container.visible {
+    opacity: 1;
+    max-height: 800px;
+    padding: 10px 0;
+    margin-top: 15px;
+}
+
+#fileContent {
+    background-color: #200F38;
+    border: 2px solid var(--purple-main);
+    padding: 18px;
+    min-height: 250px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.05em;
+    white-space: pre-wrap;
+    line-height: 1.8;
+    text-align: right;
+}
+
+.content-line {
+    padding: 3px 0;
+    cursor: pointer;
+    transition: background-color 0.1s, transform 0.1s;
+    border-radius: 3px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.content-line:hover {
+    background-color: rgba(126, 87, 194, 0.2);
+    transform: scale(1.01);
+}
+
+.error-msg,
+.info-msg {
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    background-color: #903030;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.info-msg {
+    background-color: #459045;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #351a5c;
+    color: var(--text-color);
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header-drag-area {
+    -webkit-app-region: drag;
+    height: 40px;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+}
+
+.window-controls {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    z-index: 1001;
+    -webkit-app-region: no-drag;
+}
+
+.main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-top: 20px;
+    justify-content: center;
+}

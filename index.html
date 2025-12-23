@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ראש בציטר</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header-drag-area"> 
+        <div class="window-controls">
+            <button id="minimizeButton" title="מזער"><i class="fas fa-minus"></i></button>
+            <button id="maximizeButton" title="הגדל/הקטן"><i class="far fa-square"></i></button>
+            <button id="exitButton" title="יציאה מהאפליקציה"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <div class="main-content-wrapper">
+        
+        <div class="container-title">
+            <h1>ראש בציטר <i class="fas fa-brain"></i></h1> 
+        </div>
+        
+        <div class="container">
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="התחל להקליד שאלה...">
+            </div>
+            
+            <div class="content-container">
+                <h2>התשובות (לחץ על שורה כדי להעתיק) 👇</h2>
+                <div id="fileContent">
+                    </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="renderer.js"></script>
+</body>
+</html>

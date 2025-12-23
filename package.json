@@ -1,0 +1,27 @@
+{
+  "name": "rosh-betziter",
+  "version": "1.0.0",
+  "description": "A tool to search and view game answers",
+  "main": "main.js",
+  "productName": "ראש בציטר",
+  "author": "Yali",
+  "license": "ISC",
+  "scripts": {
+    "ss": "electron .",
+    "make": "electron-forge make"
+  },
+  "keywords": [
+    "electron",
+    "txt",
+    "search",
+    "answers"
+  ],
+  "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.9.0",
+    "electron": "^31.0.0",
+    "electron-prebuilt-compile": "^8.2.0"
+  },
+  "config": {}
+}
